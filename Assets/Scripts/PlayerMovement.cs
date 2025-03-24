@@ -12,11 +12,18 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMovement;
     public float jumpingPower = 10f;
 
+    [Header("GroundCheck")]
+    bool isGroudned;
+    public Transform groundCheckPos;
+    public Vector2 groundCheckSize = new Vector2(0.5f, 0.5f);
+    public LayerMask groundLayer;
+
 
     public bool isReflection = false;
 
     private void Awake()
     {
+        //Invertir reflejo
         if (isReflection == true)
         {
             rb.gravityScale *= -1;
@@ -28,6 +35,16 @@ public class PlayerMovement : MonoBehaviour
     {
         //Actualizar movimiento
         rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
+
+        //Comprobar Grounded
+        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
+        {
+            isGroudned = true;
+        }
+        else
+        {
+            isGroudned = false;
+        }
     }
 
 
@@ -39,15 +56,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (isGroudned == true)
         {
-            //Full salto
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            if (context.performed)
+            {
+                //Full salto
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            }
+            else if (context.canceled)
+            {
+                //Medio salto
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
         }
-        else if(context.canceled)
-        {
-            //Medio salto
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
+    }
+
+    //Groundcheck Hitbox
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 }
