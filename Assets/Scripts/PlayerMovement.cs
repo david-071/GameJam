@@ -18,10 +18,6 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.5f);
     public LayerMask groundLayer;
 
-    public bool isInFloor;
-
-
-
     public bool isReflection = false;
 
     private void Awake()
