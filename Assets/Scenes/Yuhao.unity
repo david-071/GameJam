@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje Reflejo
       objectReference: {fileID: 0}
+    - target: {fileID: 2349404147233561075, guid: 530f968bee80fd44abacbd16bb8d1f09, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2651003179508225243, guid: 530f968bee80fd44abacbd16bb8d1f09, type: 3}
       propertyPath: m_Color.b
       value: 0.4339623
@@ -300,9 +304,9 @@ GameObject:
   - component: {fileID: 1152128509}
   - component: {fileID: 1152128512}
   - component: {fileID: 1152128513}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152128508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 0.9591, z: 0}
+  m_LocalPosition: {x: 2.65, y: 0.525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -445,7 +449,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!1 &1351064887
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351064887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 1.03, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -786,9 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f835356ec37571d419ee29b4bc6178cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabPoint: {fileID: 1351064888}
-  rayPoint: {fileID: 1968822813}
-  rayDistance: 0.2
+  objectPosition: {fileID: 1351064888}
 --- !u!114 &1948860780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,37 +803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d3c98c13ae1bb448a19d05c4f9284a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1968822812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1968822813}
-  m_Layer: 0
-  m_Name: RayPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1968822813
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968822812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1948860778}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2587609773734287741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -961,6 +932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
+    - target: {fileID: 6878043528247406399, guid: aa3998dd88e1d01478296a4a0e46e045, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7587280339663155394, guid: aa3998dd88e1d01478296a4a0e46e045, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 15
@@ -1028,9 +1003,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 778447419323969703, guid: aa3998dd88e1d01478296a4a0e46e045, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1968822813}
     - targetCorrespondingSourceObject: {fileID: 778447419323969703, guid: aa3998dd88e1d01478296a4a0e46e045, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1351064888}
