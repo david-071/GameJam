@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static System.TimeZoneInfo;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
-public class PlayerMovement : MonoBehaviour
+public class ReflectionMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
 
+    //Player reference
+    public GameObject objectPlayer;
+    Transform playerTransform;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
-    public float jumpingPower = 10f;
-    public float defaultGravity = 2f;
+    public float jumpingPower = -10f;
+    public float defaultGravity = -2f;
     bool isFacingRight;
     float horizontalMovement;
     float reflectionMaxDelay;
+    float transitionTime = 0f;
 
 
     [Header("GroundCheck")]
@@ -47,13 +54,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.manager.reflectionPlaying)
+        if (GameManager.manager.reflectionPlaying)
         {
+            rb.gravityScale = defaultGravity;
             BasicControls();
         }
         else
         {
+            rb.gravityScale = 0;
+            playerTransform = objectPlayer.transform;
+            Vector2 playerPosition = playerTransform.position;
+            playerPosition.y = -playerTransform.position.y;
 
+            if (transitionTime > 0f){
+                transitionTime -= Time.deltaTime;
+                rb.position = Vector2.Lerp(rb.position, playerPosition, Time.deltaTime * 10);
+            } else
+            {
+                rb.position = playerPosition;
+            }
         }
     }
 
@@ -76,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (!GameManager.manager.reflectionPlaying)
+        if (GameManager.manager.reflectionPlaying)
         {
             if (isGrounded == true)
             {
@@ -91,15 +110,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeReflection(InputAction.CallbackContext context)
     {
-        if (!GameManager.manager.reflectionPlaying)
+        if (GameManager.manager.reflectionPlaying)
         {
             if (GameManager.manager.reflectionChangeDelay == reflectionMaxDelay)
             {
-                if (context.performed && isGrounded)
+                if (context.performed)
                 {
-                    GameManager.manager.reflectionPlaying = true;
+                    GameManager.manager.reflectionPlaying = false;
                     GameManager.manager.reflectionChangeDelay = 0f;
                     Debug.Log("Reflection playing: " + GameManager.manager.reflectionPlaying);
+                    //Hacemos un tp hacia el jugador
+                    float dist = Vector2.Distance(transform.position, playerTransform.position);
+                    transitionTime = 1.0f;
                 }
             }
         }

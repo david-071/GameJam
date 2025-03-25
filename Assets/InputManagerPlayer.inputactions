@@ -42,9 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interaction",
+                    "name": "ChangeReflection",
                     "type": "Button",
-                    "id": "430df513-e20b-4eac-be48-36beb4f426b8",
+                    "id": "8af34455-7450-4b53-bc25-1707e4172bea",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -252,12 +252,12 @@
                 },
                 {
                     "name": "",
-                    "id": "af5af316-a59c-4c1a-8e5a-3765ef93ce9c",
-                    "path": "<Keyboard>/e",
+                    "id": "1a1b8493-7d7a-415f-8ca2-13d0c49844fd",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Interaction",
+                    "groups": "",
+                    "action": "ChangeReflection",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
