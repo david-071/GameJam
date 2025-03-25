@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d3fe03c87dcb434b8da8822016768d0
+guid: bafc6aabbded59e46abdedccfc16db0d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,41 +106,36 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tilesetgrid24_0
+      name: Pinchos_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 18
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b3c7df75fd95f47b3ad6244bb6bad4
+      internalID: 1165582853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 9
         width: 8
         height: 8
       alignment: 0
@@ -150,18 +145,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57584db831c1a6c47a541452e0c43e8f
-      internalID: 1431621687
+      spriteID: 680c4e0d419030d43bf28cdb723f7250
+      internalID: 1358286730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilesetgrid24_1
+      name: Pinchos_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 16
+        x: 9
+        y: 9
         width: 8
         height: 8
       alignment: 0
@@ -171,98 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ea6d51720d1c424f9c319068a591af8
-      internalID: -995770804
+      spriteID: 99d6e13884cf64248bb40ee92dd75c87
+      internalID: -1488002033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilesetgrid24_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb4875f2f4337df468652c3ea434f2c8
-      internalID: -2017974008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilesetgrid24_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 8
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1afb096cfe6752d4ca5f77dc8d7d9644
-      internalID: -2042859098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilesetgrid24_4
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 8
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 825860f062a3b7e428eb7edd6ab803e4
-      internalID: -1325707934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilesetgrid24_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 8
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e96cf7cf0bbac764bb8ecf034ab90eb8
-      internalID: -1031074843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilesetgrid24_6
+      name: Pinchos_3
       rect:
         serializedVersion: 2
         x: 0
@@ -276,17 +187,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4012d0413d0576549aae08f153a2ef58
-      internalID: 1789826911
+      spriteID: 67c3a6342198a3146902d5af964bcf03
+      internalID: 2141004811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilesetgrid24_7
+      name: Pinchos_4
       rect:
         serializedVersion: 2
-        x: 8
+        x: 9
         y: 0
         width: 8
         height: 8
@@ -297,29 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db43d840744ee654893d4ce1429ab739
-      internalID: -1410289694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilesetgrid24_8
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afa2db058f0b74f4eb693d68314daf59
-      internalID: -1537800865
+      spriteID: 0a9c56a056bb3484aae506e44bdcbb91
+      internalID: 141146523
       vertices: []
       indices: 
       edges: []
@@ -335,15 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tilesetgrid24_0: 1431621687
-      Tilesetgrid24_1: -995770804
-      Tilesetgrid24_2: -2017974008
-      Tilesetgrid24_3: -2042859098
-      Tilesetgrid24_4: -1325707934
-      Tilesetgrid24_5: -1031074843
-      Tilesetgrid24_6: 1789826911
-      Tilesetgrid24_7: -1410289694
-      Tilesetgrid24_8: -1537800865
+      Pinchos_0: 1165582853
+      Pinchos_1: 1358286730
+      Pinchos_2: -1488002033
+      Pinchos_3: 2141004811
+      Pinchos_4: 141146523
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
