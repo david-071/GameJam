@@ -109,4 +109,13 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 
+<<<<<<< HEAD
+=======
+
+    public void Teleport(InputAction.CallbackContext context)
+    {
+        transform.position = new Vector2(transform.position.x + 30, transform.position.y + 3);
+        
+    }
+>>>>>>> parent of 4533e4c (Animations)
 }

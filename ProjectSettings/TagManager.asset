@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Object
+<<<<<<< HEAD
+=======
+  - Lever
+>>>>>>> parent of 4533e4c (Animations)
   layers:
   - Default
   - TransparentFX

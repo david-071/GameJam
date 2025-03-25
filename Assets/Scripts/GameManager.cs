@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     [Header("VariablesPublicas")]
     public bool reflectionPlaying = false;
     public float reflectionChangeDelay = 1f;
+<<<<<<< HEAD
+=======
+    public float selectedLever;
+    public float pulledLever;
+>>>>>>> parent of 4533e4c (Animations)
     float reflectionMaxDelay; 
 
     private void Awake()
