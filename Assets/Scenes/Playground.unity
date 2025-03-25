@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 20150092}
   - component: {fileID: 20150091}
   - component: {fileID: 20150090}
-  - component: {fileID: 20150089}
   - component: {fileID: 20150095}
   m_Layer: 0
   m_Name: Personaje Reflejo
@@ -145,30 +144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &20150089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20150088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ffa8a0d9f10d5b4f9ae6f4004a57629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPlayer: {fileID: 1515618878}
-  objectReflection: {fileID: 0}
-  rb: {fileID: 20150092}
-  moveSpeed: 5
-  jumpingPower: 8
-  defaultGravity: 0
-  groundCheckPos: {fileID: 643251535}
-  groundCheckSize: {x: 1, y: 0.03}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  isReflection: 1
 --- !u!114 &20150090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +171,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 20150089}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 20150095}
+        m_TargetAssemblyTypeName: ReflectionMovement, Assembly-CSharp
         m_MethodName: Movement
         m_Mode: 0
         m_Arguments:
@@ -212,8 +187,8 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 20150089}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 20150095}
+        m_TargetAssemblyTypeName: ReflectionMovement, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -276,8 +251,8 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 20150089}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 20150095}
+        m_TargetAssemblyTypeName: ReflectionMovement, Assembly-CSharp
         m_MethodName: ChangeReflection
         m_Mode: 0
         m_Arguments:
@@ -444,20 +419,65 @@ MonoBehaviour:
   m_GameObject: {fileID: 20150088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b8dc4264a9c0c349a1d9fff82cd1c22, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aa52aa1a4a6c594b869bb637fc75c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: {fileID: 20150089}
-  rb: {fileID: 0}
+  rb: {fileID: 20150092}
+  objectPlayer: {fileID: 1515618878}
   moveSpeed: 5
-  jumpingPower: 10
-  defaultGravity: 8
-  horizontalMovement: 0
-  groundCheckPos: {fileID: 0}
-  groundCheckSize: {x: 0.5, y: 0.5}
+  jumpingPower: -10
+  defaultGravity: -2
+  groundCheckPos: {fileID: 643251535}
+  groundCheckSize: {x: 1, y: 0.05}
   groundLayer:
-    m_Bits: 0
-  isGrounded: 0
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!1 &535626618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535626619}
+  - component: {fileID: 535626620}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &535626619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535626618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.48965272, y: 0.5361995, z: -0.15865295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &535626620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535626618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd8374e8f1a80b4bbf9935e31e21e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reflectionPlaying: 0
+  reflectionChangeDelay: 1
 --- !u!1 &643251534
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +772,7 @@ GameObject:
   - component: {fileID: 1515618879}
   - component: {fileID: 1515618882}
   - component: {fileID: 1515618884}
-  - component: {fileID: 1515618883}
+  - component: {fileID: 1515618885}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -900,30 +920,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!114 &1515618883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515618878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ffa8a0d9f10d5b4f9ae6f4004a57629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPlayer: {fileID: 1515618878}
-  objectReflection: {fileID: 0}
-  rb: {fileID: 1515618879}
-  moveSpeed: 5
-  jumpingPower: 8
-  defaultGravity: 0
-  groundCheckPos: {fileID: 1915923495}
-  groundCheckSize: {x: 1, y: 0.03}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  isReflection: 0
 --- !u!114 &1515618884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,7 +947,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1515618883}
+      - m_Target: {fileID: 1515618885}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: Movement
         m_Mode: 0
@@ -967,7 +963,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1515618883}
+      - m_Target: {fileID: 1515618885}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
@@ -1031,7 +1027,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1515618883}
+      - m_Target: {fileID: 1515618885}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: ChangeReflection
         m_Mode: 0
@@ -1050,6 +1046,27 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1515618885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515618878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f37e07d3bce814c8095d6c1ad26b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1515618879}
+  moveSpeed: 5
+  jumpingPower: 10
+  defaultGravity: 2
+  groundCheckPos: {fileID: 1915923495}
+  groundCheckSize: {x: 1, y: 0.05}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1820992271
 GameObject:
   m_ObjectHideFlags: 0

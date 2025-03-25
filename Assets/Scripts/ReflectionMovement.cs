@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
-public class PlayerMovement : MonoBehaviour
+public class ReflectionMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
 
+    //Player reference
+    public GameObject objectPlayer;
+    Transform playerTransform;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
-    public float jumpingPower = 10f;
-    public float defaultGravity = 2f;
+    public float jumpingPower = -10f;
+    public float defaultGravity = -2f;
     float horizontalMovement;
     float reflectionMaxDelay;
 
@@ -46,13 +51,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.manager.reflectionPlaying)
+        if (GameManager.manager.reflectionPlaying)
         {
+            rb.gravityScale = defaultGravity;
             BasicControls();
         }
         else
         {
-
+            rb.gravityScale = 0;
+            playerTransform = objectPlayer.transform;
+            rb.position = new Vector2(playerTransform.position.x, playerTransform.position.y * -1);
         }
     }
 
@@ -65,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (!GameManager.manager.reflectionPlaying)
+        if (GameManager.manager.reflectionPlaying)
         {
             if (isGrounded == true)
             {
@@ -80,13 +88,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeReflection(InputAction.CallbackContext context)
     {
-        if (!GameManager.manager.reflectionPlaying)
+        if (GameManager.manager.reflectionPlaying)
         {
             if (GameManager.manager.reflectionChangeDelay == reflectionMaxDelay)
             {
-                if (context.performed && isGrounded)
+                if (context.performed)
                 {
-                    GameManager.manager.reflectionPlaying = true;
+                    GameManager.manager.reflectionPlaying = false;
                     GameManager.manager.reflectionChangeDelay = 0f;
                     Debug.Log("Reflection playing: " + GameManager.manager.reflectionPlaying);
                 }
