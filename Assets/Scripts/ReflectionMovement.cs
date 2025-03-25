@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static System.TimeZoneInfo;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class ReflectionMovement : MonoBehaviour
@@ -17,8 +18,10 @@ public class ReflectionMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpingPower = -10f;
     public float defaultGravity = -2f;
+    bool isFacingRight;
     float horizontalMovement;
     float reflectionMaxDelay;
+    float transitionTime = 0f;
 
 
     [Header("GroundCheck")]
@@ -27,7 +30,7 @@ public class ReflectionMovement : MonoBehaviour
     public LayerMask groundLayer;
     bool isGrounded;
 
-    private void Awake()
+    private void Start()
     {
         rb.gravityScale = defaultGravity;
         reflectionMaxDelay = GameManager.manager.reflectionChangeDelay;
@@ -60,7 +63,16 @@ public class ReflectionMovement : MonoBehaviour
         {
             rb.gravityScale = 0;
             playerTransform = objectPlayer.transform;
-            rb.position = new Vector2(playerTransform.position.x, playerTransform.position.y * -1);
+            Vector2 playerPosition = playerTransform.position;
+            playerPosition.y = -playerTransform.position.y;
+
+            if (transitionTime > 0f){
+                transitionTime -= Time.deltaTime;
+                rb.position = Vector2.Lerp(rb.position, playerPosition, Time.deltaTime * 10);
+            } else
+            {
+                rb.position = playerPosition;
+            }
         }
     }
 
@@ -69,6 +81,16 @@ public class ReflectionMovement : MonoBehaviour
 
         //Calcular movimiento mediante contexto
         horizontalMovement = context.ReadValue<Vector2>().x;
+        if (horizontalMovement >= 0.1f)
+        {
+            isFacingRight = true;
+            transform.localScale = new Vector3(1f, 1f);
+        }
+        else if (horizontalMovement <= -0.1)
+        {
+            isFacingRight = false;
+            transform.localScale = new Vector3(-1f, 1f);
+        }
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -97,6 +119,9 @@ public class ReflectionMovement : MonoBehaviour
                     GameManager.manager.reflectionPlaying = false;
                     GameManager.manager.reflectionChangeDelay = 0f;
                     Debug.Log("Reflection playing: " + GameManager.manager.reflectionPlaying);
+                    //Hacemos un tp hacia el jugador
+                    float dist = Vector2.Distance(transform.position, playerTransform.position);
+                    transitionTime = 1.0f;
                 }
             }
         }

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     //Variables publicas
     [Header("VariablesPublicas")]
     public bool reflectionPlaying = false;
-    public float reflectionChangeDelay = 2f;
+    public float reflectionChangeDelay = 1f;
     float reflectionMaxDelay; 
 
     private void Awake()
