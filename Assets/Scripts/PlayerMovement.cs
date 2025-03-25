@@ -109,10 +109,4 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 
-
-    public void Teleport(InputAction.CallbackContext context)
-    {
-        transform.position = new Vector2(transform.position.x + 30, transform.position.y + 3);
-        
-    }
 }

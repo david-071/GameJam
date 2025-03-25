@@ -11,12 +11,7 @@ public class GrabObjects : MonoBehaviour
     private GameObject heldObject;
     void Update()
     {
-        
-    }
-
-    public void PickCrate(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        if (Keyboard.current.eKey.wasPressedThisFrame) 
         {
             if (heldObject == null)
             {
