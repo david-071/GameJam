@@ -1780,6 +1780,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3144362636540485866, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144362636540485866, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144362636540485866, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144362636540485866, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144362636540485866, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5812364592117937226, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 17
@@ -1880,6 +1900,22 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6210475763133758192, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210475763133758192, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2071808323, guid: 4c55dbf5fcef35047a7cad161ec07287, type: 3}
+    - target: {fileID: 6210475763133758192, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210475763133758192, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7902102035725647147, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
       propertyPath: m_Name
       value: Personaje
@@ -1891,6 +1927,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7902102035725647147, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1689211221}
+    - targetCorrespondingSourceObject: {fileID: 7902102035725647147, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1689211223}
   m_SourcePrefab: {fileID: 100100000, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
 --- !u!1 &419953221 stripped
 GameObject:
@@ -10965,6 +11004,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f37e07d3bce814c8095d6c1ad26b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1689211223
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689211213}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b67d50fd9112da489e643a9f13257b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1700244066
 GameObject:
   m_ObjectHideFlags: 0
