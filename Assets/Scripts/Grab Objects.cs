@@ -20,9 +20,19 @@ public class GrabObjects : MonoBehaviour
 
     void Update()
     {
+<<<<<<< Updated upstream
         RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.right, rayDistance);
 
         if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
+=======
+
+    }
+
+
+    public void PickCrate(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+>>>>>>> Stashed changes
         {
             if (Keyboard.current.eKey.wasPressedThisFrame && grabObject == null)
             {

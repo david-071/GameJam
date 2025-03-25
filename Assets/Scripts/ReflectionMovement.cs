@@ -18,7 +18,6 @@ public class ReflectionMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpingPower = -10f;
     public float defaultGravity = -2f;
-    bool isFacingRight;
     float horizontalMovement;
     float reflectionMaxDelay;
     float transitionTime = 0f;
@@ -83,12 +82,10 @@ public class ReflectionMovement : MonoBehaviour
         horizontalMovement = context.ReadValue<Vector2>().x;
         if (horizontalMovement >= 0.1f)
         {
-            isFacingRight = true;
             transform.localScale = new Vector3(1f, 1f);
         }
         else if (horizontalMovement <= -0.1)
         {
-            isFacingRight = false;
             transform.localScale = new Vector3(-1f, 1f);
         }
     }
