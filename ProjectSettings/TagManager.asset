@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Object
   - Lever
-  - GameOver
   layers:
   - Default
   - TransparentFX
