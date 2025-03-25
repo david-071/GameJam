@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - Lever
+  - Spike
   layers:
   - Default
   - TransparentFX
