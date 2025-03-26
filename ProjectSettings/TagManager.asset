@@ -9,6 +9,7 @@ TagManager:
   - GameOver
   - Spike
   - Checkpoint
+  - GameFinished
   layers:
   - Default
   - TransparentFX
