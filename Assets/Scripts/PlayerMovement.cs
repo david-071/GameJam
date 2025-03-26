@@ -136,6 +136,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (context.performed && isGrounded)
                 {
+                    horizontalMovement = 0f;
+                    mAnimator.SetBool("isRunning", false);
+                    GameManager.manager.isRunningGlobal = false;
                     GameManager.manager.reflectionPlaying = true;
                     GameManager.manager.reflectionChangeDelay = 0f;
                     Debug.Log("Reflection playing: " + GameManager.manager.reflectionPlaying);
