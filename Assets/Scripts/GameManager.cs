@@ -10,9 +10,19 @@ public class GameManager : MonoBehaviour
 
     //Variables publicas
     [Header("VariablesPublicas")]
+    public bool isGamePlaying;
+    public bool isGameOver;
+    public bool isFacingRight;
     public bool reflectionPlaying = false;
     public float reflectionChangeDelay = 1f;
-    float reflectionMaxDelay; 
+    public float selectedLever;
+    public float pulledLever;
+    public bool isRunningGlobal = false;
+    public bool isJumpingGlobal = false;
+    public bool isChangingGlobal = false;
+    public bool isEndingChangeGlobal = false;
+    float reflectionMaxDelay;
+    float fadeTimer = 0f;
 
     private void Awake()
     {
@@ -20,6 +30,8 @@ public class GameManager : MonoBehaviour
         {
             manager = this;
             DontDestroyOnLoad(this);
+            isGamePlaying = true;
+            isGameOver = false;
         }
         else if (manager != this)
         {
@@ -35,6 +47,16 @@ public class GameManager : MonoBehaviour
         if (reflectionChangeDelay > reflectionMaxDelay)
         {
             reflectionChangeDelay = reflectionMaxDelay; 
+        }
+
+        if (isGameOver)
+        {
+            fadeTimer += Time.deltaTime;
+            if (fadeTimer >= 0.1f)
+            {
+                isGameOver = false;
+                fadeTimer = 0f;
+            }
         }
     }
 
