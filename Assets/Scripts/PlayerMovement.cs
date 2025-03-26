@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Compilation;
 //using UnityEditor.Experimental.GraphView;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -73,6 +75,14 @@ public class PlayerMovement : MonoBehaviour
         else
         {
 
+        }
+
+        if (GameManager.manager.respawnNow)
+        {
+
+            SceneManager.LoadScene(0);
+            GameManager.manager.respawnNow = false;
+            
         }
 
         //Actualización de animaciones
@@ -170,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
     //Cheat
     public void Teleport(InputAction.CallbackContext context)
     {
-        transform.position = new Vector2(transform.position.x + 30, transform.position.y + 3);
+        transform.position = new Vector2(transform.position.x + 20, transform.position.y + 3);
         
     }
 }

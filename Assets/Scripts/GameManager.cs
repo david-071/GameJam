@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool isFacingRight;
     public bool reflectionPlaying = false;
     public float reflectionChangeDelay = 1f;
+    public bool respawnNow = false;
     public float selectedLever;
     public float pulledLever;
     public bool isRunningGlobal = false;
@@ -38,7 +39,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         reflectionMaxDelay = reflectionChangeDelay;
-
     }
 
     void Update()
