@@ -4,14 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Object
   - Lever
-  - Spike
+  - Object
+  - GameOver
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 

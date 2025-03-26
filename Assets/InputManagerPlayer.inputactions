@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "Pickup",
                     "type": "Button",
                     "id": "8d98bfee-fcfc-48b1-8185-b3b01b9e5671",
                     "expectedControlType": "Button",
@@ -62,7 +62,7 @@
                 {
                     "name": "Teleport",
                     "type": "Button",
-                    "id": "d4bbfbf1-7170-4c69-a145-c5ffafeb45a1",
+                    "id": "2d734c2b-0899-4fe2-9434-ce8013b58b28",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -286,7 +286,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -297,13 +297,13 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "bbd50020-d24d-4279-9d92-c3f2c264c647",
+                    "id": "6054c868-94ed-41d4-a52a-325f359c9f74",
                     "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
