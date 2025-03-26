@@ -2126,6 +2126,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3641284875636700830, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5812364592117937226, guid: b7cb5a17d540891448b0bafc04090c3e, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 17
